@@ -28,7 +28,7 @@ class Hoop extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
   hoopContainer: {
     position: 'absolute',
     left: (Dimensions.get('window').width / 2) - (179 / 2),
@@ -54,6 +54,6 @@ Hoop.defaultProps = {
 
 Hoop.propTypes = {
   y: PropTypes.number,
-};
+};*/
 
 export default Hoop;

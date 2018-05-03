@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   netContainer: {
     position: 'absolute',
     backgroundColor: '#ff260f',
-    borderRadius: 3,
+    //borderRadius: 3,
   },
 });
 

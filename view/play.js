@@ -121,7 +121,7 @@ class TestBackgroundImage extends Component {
     render() {
         return (
             <BackgroundImage>
-              <Text style={styles.text}>Fullscreen!</Text>
+              <Text style={styles.text}>Attrape Capumain avec ta Pokeball !!</Text>
             </BackgroundImage>
         ) 
     }

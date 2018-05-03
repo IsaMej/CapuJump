@@ -17,6 +17,13 @@ import Score from '../components/Score';
 
 import Vector from '../utils/Vector';
 
+
+//export default class PokeBall extends Component {
+  
+  //}
+
+
+
 // physical variables
 const gravity = 0.6; // gravity
 const radius = 48; // ball radius
@@ -43,7 +50,38 @@ const LC_BOUNCING = 3;
 const LC_RESTARTING = 4;
 const LC_RESTARTING_FALLING = 5;
 
-class PokeBall extends Component {
+export default class PokeBall extends Component {
+
+  render() {
+    const { navigate } = this.props.navigation;
+    
+    return (
+              <View>
+                <PopupDialog ref={(popupEndGame) => { this.popupEndGame = popupEndGame; }}>
+                    <View>
+                        <FormLabel>Storage</FormLabel>
+                        <FormInput
+                            onChangeText={this._onChangeStorage("storage")}
+                            value={this.state.storage}
+                        />
+                        <Button
+                            raised
+                            onPress={this._saveScore}
+                            title="Stocker"
+                            style={styles.button}
+                        />
+                    </View>
+                    </PopupDialog>
+                
+                <View style={styles.buttonOption}>
+                    <Button  onPress={() => { this.popupOption.show(); }} title = 'O' />
+                </View>
+                <View style={styles.buttonTest}>
+                    <Button  onPress={() => { this.popupEndGame.show(); }} title = 'P' />
+                </View>
+                </View>
+    )
+  }
 
   constructor(props) {
     super(props);
@@ -370,4 +408,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PokeBall;
+//export default PokeBall;

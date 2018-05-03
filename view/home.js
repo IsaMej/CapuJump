@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {ActivityIndicator, BackHandler, Alert, Button, AppRegistry, Image, StyleSheet, Text, View } from 'react-native';
+import {ActivityIndicator, BackHandler, Alert, Button, AppRegistry, Image, StyleSheet, Text, View, } from 'react-native';
+import BgAudio from 'react-native-background-audio';
 
 export default class Home extends Component {
   static navigationOptions = {
@@ -12,8 +13,12 @@ export default class Home extends Component {
   }
   render() {
     const { navigate } = this.props.navigation;
+    const audio_options = {
+      source: {local : require('../music/LostWoods.mp3')}
+    }
     return (
       <View style={styles.container}>
+      <BgAudio options = {audio_options} ></BgAudio>
         <View>
           <Text style={styles.titleText}>CapuBall</Text>
         </View>

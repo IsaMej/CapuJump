@@ -33,9 +33,7 @@ class Ball extends Component {
         }}
         onPressOut={(e) => {
           if (this.xIn !== null) {
-            // e.nativeEvent.locationX and locationY aren't updated on Android
-            // (remaing the same as onPressIn) in 0.24, so we need to calculate
-            // it manually
+            
             let dx = e.nativeEvent.pageX - this.initialPageX;
             let dy = e.nativeEvent.pageY - this.initialPageY;
             this.xOut = this.xIn + dx;
