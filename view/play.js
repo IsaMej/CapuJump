@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PopupDialog from 'react-native-popup-dialog';
 import { FormLabel, FormInput } from 'react-native-elements';
-import { AsyncStorage, StackNavigator, BackHandler, Alert, Button, AppRegistry, Image, StyleSheet, Text, View } from 'react-native';
+import { AsyncStorage, StackNavigator, BackHandler, Alert, Button, AppRegistry, Image, StyleSheet, Text, View, ScrollView, ImageBackground } from 'react-native';
 
 export default class Play extends Component {
     static navigationOptions = {
@@ -31,19 +31,29 @@ export default class Play extends Component {
 
     render() {
         const { navigate } = this.props.navigation;
+        
         return (
             <View>
-                <View>
+                
+                <ScrollView>
+                    <ImageBackground
+                    source = {require ('../assets/backgroundpok.png')}
+                    style = {
+                        {
+                            width: 400, 
+                            height: 850,
+                            //zIndex: -1,
+                            flex: 1,
+                            //width: null,
+                            //height: null,
+                            //resizeMode: 'cover'
+                
+                        }
+                    }
+                    >
 
-                </View>
-                <View style={styles.container}>
-                    <PopupDialog ref={(popupOption) => { this.popupOption = popupOption; }}>
-                    <View>
-                        <Text>Option</Text>
-                    </View>
-                    </PopupDialog>
-                </View>
-                <View>
+
+            <View>
                 <PopupDialog ref={(popupEndGame) => { this.popupEndGame = popupEndGame; }}>
                     <View>
                         <FormLabel>Storage</FormLabel>
@@ -66,6 +76,13 @@ export default class Play extends Component {
                 <View style={styles.buttonTest}>
                     <Button  onPress={() => { this.popupEndGame.show(); }} title = 'P' />
                 </View>
+
+
+                    </ImageBackground>
+               
+                
+                
+                </ScrollView>
             </View>
         );
     }
@@ -82,5 +99,46 @@ const styles = StyleSheet.create({
     buttonTest: {
         top: -10,
         left: 160,
-    }
+    },
 })
+
+
+/*export default class BackgroundImage extends Component {
+
+    render() {
+        return (
+            <Image source={require('../assets/backgroundpok.jpg')}
+                  style={styles.backgroundImage}>
+
+                  {this.props.children}
+
+            </Image>
+        )
+    }
+}
+
+class TestBackgroundImage extends Component {
+    render() {
+        return (
+            <BackgroundImage>
+              <Text style={styles.text}>Fullscreen!</Text>
+            </BackgroundImage>
+        ) 
+    }
+}
+
+const styles = StyleSheet.create({
+    backgroundImage: {
+        flex: 1,
+        width: null,
+        height: null,
+        resizeMode: 'cover'
+    },
+
+    text: {
+        textAlign: 'center',
+        color: 'white',
+        backgroundColor: 'rgba(0,0,0,0)',
+        fontSize: 32
+    }
+});*/

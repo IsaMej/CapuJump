@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BackHandler, Alert, Button, AppRegistry, Image, StyleSheet, Text, View } from 'react-native';
+import {ActivityIndicator, BackHandler, Alert, Button, AppRegistry, Image, StyleSheet, Text, View } from 'react-native';
 
 export default class Home extends Component {
   static navigationOptions = {
@@ -15,7 +15,7 @@ export default class Home extends Component {
     return (
       <View style={styles.container}>
         <View>
-          <Text style={styles.titleText}>CapuJump</Text>
+          <Text style={styles.titleText}>CapuBall</Text>
         </View>
         <View style={styles.buttonContainer}>
           <Button
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     top: 0,
-    marginLeft: 65,
+    marginLeft: 84,
     fontWeight: 'bold',
     justifyContent: 'center',
     fontSize: 50,
